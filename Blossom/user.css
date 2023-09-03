@@ -5,8 +5,8 @@
     background-color: var(--spice-background);
 }
 
+/* hide the top bar used for window controls */
 .spotify__container--is-desktop .Root__top-container {
-    padding-top: calc(24px + 8px * 2);
     --panel-gap: 0;
 }
 
@@ -93,17 +93,17 @@
 
 /* TRACKLIST */
 .main-trackList-playingIcon {
-    filter: hue-rotate(100deg);
+    filter: hue-rotate(85deg);
 }
 
 .main-trackList-trackListRow {
-    margin-left: 0px;
-    transition: all 0.5s;
+    /* margin-left: 0px; */
+    /* transition: all 0.5s; */
 }
 .main-trackList-trackListRow:hover {
     background-color: var(--spice-player);
-    margin-left: 10px;
-    transition: all 0.5s;
+    /* margin-left: 10px; */
+    /* transition: all 0.5s; */
 }
 
 /* Playback bar and controls */
@@ -144,27 +144,14 @@
 .main-nowPlayingBar-nowPlayingBar {
     position: relative;
     padding-inline-end: 16px !important;
-}
-
-.playback-bar__progress-time-elapsed,
-.main-playbackBarRemainingTime-container {
-    min-width: 0;
-    width: 0 !important;
-    opacity: 0;
-    transition: all 0.5s;
-}
-
-.playback-bar:hover .playback-bar__progress-time-elapsed, .playback-bar:hover
-.main-playbackBarRemainingTime-container {
-    min-width: 40px;
-    width: auto;
-    opacity: 1;
+    padding-top: 20px !important;
+    box-sizing: content-box;
 }
 
 .playback-bar {
     width: 100%;
     left: 0;
-    bottom: 65px;
+    top: 6px;
     position: absolute;
     cursor: pointer;
     overflow: hidden;
@@ -172,6 +159,7 @@
 
 .progress-bar {
     --fg-color: var(--spice-button-active);
+    --bg-color: var(--spice-button);
 }
 
 .os-theme-spotify.os-host-transition > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle {
@@ -182,16 +170,13 @@
 
 .player-controls__buttons {
     margin-bottom: 0;
+    align-items: center;
 }
 
 .main-playPauseButton-button {
     cursor: pointer;
     border-radius: 10px;
     --button-size: 50px !important;
-}
-
-.player-controls__buttons {
-    align-items: center;
 }
 
 /* LEFT BAR STUFF */
@@ -247,7 +232,7 @@ li > div::after {
     background-color: var(--spice-player);
     border-radius: 0 4px 4px 0;
     position: relative;
-    transform: translate(-12px, 0);
+    /* transform: translate(-12px, 0); */
     transition: all 1s;
 }
 
@@ -375,8 +360,7 @@ input {
 }
 .main-shelf-seeAll,
 .main-cardImage-image,
-.main-trackList-trackList,
-.main-trackList-number {
+.main-trackList-trackList {
     animation-name: left-fade-anim;
     animation-duration: 1s;
 }
